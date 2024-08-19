@@ -19,7 +19,22 @@ Array.Resize(ref array, array.Length+1);
 
 array[array.Length-1] = lastElement;
 
-//int maxNumber = array[0];
 
+for (int i = 0; i < array.Length - 1; i++)
+{
+    for (int j = 0; j < array.Length - 1 - i; j++)
+    {
+        if (array[j] < array[j + 1])
+        {
+            int temp = array[j];
+            array[j] = array[j + 1];
+            array[j + 1] = temp;
+        }
+    }
+}
 
+foreach (int item in array)
+{
 
+Console.WriteLine(item); 
+}
